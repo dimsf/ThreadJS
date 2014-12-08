@@ -1,0 +1,23 @@
+<script src="Thread.js"></script>
+<script>
+var thread = new Thread(function (iterCount) {
+
+	var sum = 0;
+	for(var i = 1; i <= iterCount; i++) {
+		sum += i;
+	}
+	
+	postMessage(sum);
+});
+
+thread.onmessage = function (e) {
+    console.log('Thread returned: ' + e.data);
+}
+
+thread.onerror = function (e) {
+    console.log('An error occured: ' + e.message);
+}
+
+//Start thread passing custom parameter
+thread.start(1000000);
+</script>
