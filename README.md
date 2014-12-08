@@ -9,10 +9,11 @@ Installation
 Import the library using:
 ``` html
 	<script src="Thread.js"></script>
-``` html
+```
+
 Usage
 =====
-
+''' javascript
 	var thread = new Thread(function (customArgs) {
 		//Code here will be executed in a web worker.
 		//You can use postMessage to send data back to main thread, just like plain web workers.
@@ -35,5 +36,5 @@ Usage
 	
 	//You can stop the thread at any time using the stop method
 	thread.stop()
-
+'''
 An example resides in Example.htm
