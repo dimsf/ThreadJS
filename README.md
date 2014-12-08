@@ -8,33 +8,33 @@ Installation
 ===========
 Import the library using:
 ``` html
-	<script src="Thread.js"></script>
+<script src="Thread.js"></script>
 ```
 
 Usage
 =====
 ``` javascript
-	var thread = new Thread(function (customArgs) {
-		//Code here will be executed in a web worker.
-		//You can use postMessage to send data back to main thread, just like plain web workers.
-	});
+var thread = new Thread(function (customArgs) {
+	//Code here will be executed in a web worker.
+	//You can use postMessage to send data back to main thread, just like plain web workers.
+});
 
-	//Optionally handle onmessage & onerror to receive data and error from thread.
+//Optionally handle onmessage & onerror to receive data and error from thread.
 
-	thread.onmessage = function(e) {
-		console.log('Received message: ' + e.data);
-	}
+thread.onmessage = function(e) {
+	console.log('Received message: ' + e.data);
+}
 
-	thread.onerror = function(e) {
-		console.log('Error: ' + e.message);
-	}
+thread.onerror = function(e) {
+	console.log('Error: ' + e.message);
+}
 
-	var custom_args = { test: [1,2,3] };
+var custom_args = { test: [1,2,3] };
 
-	//Start thread passing optional custom parameters
-	thread.start(custom_args);
-	
-	//You can stop the thread at any time using the stop method
-	thread.stop()
+//Start thread passing optional custom parameters
+thread.start(custom_args);
+
+//You can stop the thread at any time using the stop method
+thread.stop()
 ```
 An example resides in Example.htm
