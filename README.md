@@ -7,8 +7,9 @@ creating a separate javascript file. You just write your thread method and (opti
 Installation
 ===========
 Import the library using:
+``` html
 	<script src="Thread.js"></script>
-
+``` html
 Usage
 =====
 
